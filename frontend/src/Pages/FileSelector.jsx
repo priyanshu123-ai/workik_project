@@ -9,7 +9,7 @@ const FileSelector = ({ owner, repo }) => {
 
   useEffect(() => {
     if (!repo) return;
-    fetch(`http://localhost:3000/api/github/repo-files?owner=${owner}&repo=${repo}`, {
+    fetch(`https://workik-project-1-backend.onrender.com/api/github/repo-files?owner=${owner}&repo=${repo}`, {
       credentials: "include",
     })
       .then(res => res.json())
@@ -27,7 +27,7 @@ const FileSelector = ({ owner, repo }) => {
     const res = await fetch(file.download_url);
     const code = await res.text();
 
-    const response = await fetch("http://localhost:3000/response/generate", {
+    const response = await fetch("https://workik-project.onrender.com/response/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
