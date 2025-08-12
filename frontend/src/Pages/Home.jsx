@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   const handleGitHubLogin = () => {
-    window.location.href = "https://workik-project.onrender.com/auth/github";
+    window.location.href = "https://workik-project-1-backend.onrender.com/auth/github";
   };
 
   return (
