@@ -9,7 +9,7 @@ const FileSelector = ({ owner, repo }) => {
 
   useEffect(() => {
     if (!repo) return;
-    fetch(`https://workik-project.onrender.com/api/github/repo-files?owner=${owner}&repo=${repo}`, {
+    fetch(`https://workik-project-1-backend.onrender.com/api/github/repo-files?owner=${owner}&repo=${repo}`, {
       credentials: "include",
     })
       .then(res => res.json())
