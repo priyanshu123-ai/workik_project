@@ -2,7 +2,7 @@
 
 import passport from "passport";
 import { Strategy as GitHubStrategy } from "passport-github";
-import  GitHubUser  from "../models/githubUser.model.js"; // Make sure model is correctly named
+import  GithubUser  from "../models/githubUser.model.js"; // Make sure model is correctly named
 
 passport.use(
   new GitHubStrategy(
@@ -13,7 +13,7 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const user = await GitHubUser.findOneAndUpdate(
+        const user = await GithubUser.findOneAndUpdate(
           { githubId: profile.id },
           {
             githubId: profile.id,
@@ -37,7 +37,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await GitHubUser.findById(id); // Make sure this matches the GitHubUser model
+    const user = await GithubUser.findById(id); // Make sure this matches the GitHubUser model
     done(null, user);
   } catch (error) {
     done(error, null);
