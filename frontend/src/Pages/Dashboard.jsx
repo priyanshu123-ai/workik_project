@@ -7,7 +7,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const handleLoginAgain = async () => {
-    await fetch("http://localhost:3000/auth/logout", {
+    await fetch("https://workik-project.onrender.com/auth/logout", {
       credentials: "include",
     });
     navigate("/");
