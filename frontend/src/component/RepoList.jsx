@@ -9,7 +9,7 @@ const RepoList = () => {
   const [loadingFiles, setLoadingFiles] = useState(false); // NEW: Track file loading state
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/github/fetch-repos", {
+    fetch("https://workik-project.onrender.com/api/github/fetch-repos", {
       credentials: "include",
     })
       .then((res) => res.json())
