@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginAgain = () => {
   const handleLoginAgain = () => {
-    window.location.href = "https://workik-project.onrender.com/auth/logout";
+    window.location.href = "https://workik-project-1-backend.onrender.com/auth/logout";
   };
 
   return (
